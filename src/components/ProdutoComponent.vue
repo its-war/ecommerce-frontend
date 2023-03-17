@@ -5,6 +5,7 @@
           aspect-ratio="1/1"
           src="https://static.natura.com/cdn/ff/Ksbf8svSfv2MNwNccsJW99mxJGM8cVhRUv56DDMXGN8/1677652248/public/products/69195_1_8.jpg"
       ></v-img>
+      <span style="position: absolute; top: 5px; left: 5px; color: red">Esgotado</span>
       <span style="position: absolute; top: 5px; right: 5px">4,8 <v-icon icon="mdi-star" color="yellow"></v-icon></span>
       <h5>Sève</h5>
       <h3 class="ma-auto">Óleo Desodorante Corporal Sève Peônia e Amêndoas</h3>

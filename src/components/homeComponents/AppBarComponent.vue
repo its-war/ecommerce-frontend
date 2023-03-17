@@ -5,7 +5,7 @@
     </template>
     <v-app-bar-title>Main Title</v-app-bar-title>
     <template v-slot:append>
-      <v-btn icon="mdi-cart-variant" color="red"></v-btn>
+      <v-btn @click.stop="$emit('carrinhoDrawer')" icon="mdi-cart-variant" color="red"></v-btn>
       <div v-click-outside="{
           handler: pesquisaClickOutSide
         }">

@@ -22,6 +22,8 @@ const vuetify = createVuetify({
 
 const app = createApp(App)
 
+app.config.globalProperties.$urlBase = 'http://' + window.location.host;
+
 app.use(createPinia())
 app.use(router)
 app.use(vuetify)
