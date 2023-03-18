@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {mainStore} from "@/stores/mainStore";
 import HomePage from "@/views/HomeView.vue";
-import InicioComponent from "@/components/pages/InicioPage.vue";
-import AtendimentoComponent from "@/components/pages/AtendimentoPage.vue";
-import MaisVendidosPage from "@/components/pages/MaisVendidosPage.vue";
-import LancamentosPage from "@/components/pages/LancamentosPage.vue";
-import PromocoesPage from "@/components/pages/PromocoesPage.vue";
+import InicioComponent from "@/pages/InicioPage.vue";
+import AtendimentoComponent from "@/pages/AtendimentoPage.vue";
+import MaisVendidosPage from "@/pages/MaisVendidosPage.vue";
+import LancamentosPage from "@/pages/LancamentosPage.vue";
+import PromocoesPage from "@/pages/PromocoesPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,6 +49,16 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
     }
   ]
+})
+
+router.beforeEach(async () => {
+  const store = mainStore();
+  store.setOverlay(true);
+});
+
+router.afterEach(() => {
+  const store = mainStore();
+  setTimeout(() => {store.setOverlay(false);}, 3000);
 })
 
 export default router
