@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <AppBarComponent @carrinhoDrawer="carrinhoDrawer = !carrinhoDrawer" @navigationDrawer="navigationDrawer = !navigationDrawer"/>
-    <NavigationDrawerComponent :active="navigationDrawer" @closeDrawer="navigationDrawer = false"/>
+    <NavigationDrawerComponent :active="navigationDrawer"/>
     <CarrinhoDrawer :active="carrinhoDrawer" @closeCarrinho="carrinhoDrawer = false"/>
     <MainComponent/>
     <FooterComponent/>

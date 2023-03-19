@@ -1,7 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="$props.active" location="left" expand-on-hover rail theme="dark" v-click-outside="{
-          handler: clickOutSide
-        }">
+  <v-navigation-drawer v-model="$props.active" location="left" expand-on-hover rail permanent theme="dark">
     <v-list color="transparent">
       <v-list-item :class="$route.path === '/' ? 'page-active' : ''" @click="$router.push({path: '/'})" prepend-icon="mdi-home" title="Início"></v-list-item>
       <v-list-item :class="$route.path === '/lancamentos' ? 'page-active' : ''" @click="$router.push({path: '/lancamentos'})" prepend-icon="mdi-alert-decagram" title="Lançamentos"></v-list-item>
@@ -20,14 +18,6 @@ export default {
       required: true,
       default: false
     }
-  },
-  methods: {
-    clickOutSide(){
-      this.$emit('closeDrawer');
-    }
-  },
-  mounted() {
-    console.log(this.$route);
   }
 }
 </script>
