@@ -1,8 +1,5 @@
 <template>
   <v-navigation-drawer
-      v-click-outside="{
-          handler: carrinhoClickOut
-        }"
       v-model="carrinhoDrawer" @update:modelValue="carrinhoClickOut" location="right" theme="dark" temporary>
     <template v-slot:prepend>
       <h3 style="text-align: center">Carrinho de Compras</h3>
@@ -26,6 +23,7 @@
       <span style="margin-left: 5px; margin-bottom: 5px; font-size: 14px; color: #94f794">Valor Total: R$ 794,74</span>
     </template>
   </v-navigation-drawer>
+  <v-overlay :model-value="carrinhoDrawer" @click="carrinhoClickOut"></v-overlay>
 </template>
 
 <script>
@@ -43,13 +41,15 @@ export default {
   methods: {
     carrinhoClickOut(){
       this.$emit('closeCarrinho');
+      this.carrinhoDrawer = false;
     }
   },
   watch: {
     '$props.active'(){
       this.carrinhoDrawer = this.$props.active;
     }
-  }
+  },
+  emits: ['closeCarrinho']
 }
 </script>
 
