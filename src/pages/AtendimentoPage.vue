@@ -26,8 +26,7 @@
           Você também pode falar conosco através do nosso Chat, basta clicar no botão abaixo.<br/>
           <v-btn variant="tonal" color="blue" append-icon="mdi-comment-text">
             Abrir Chat
-            <v-dialog activator="parent" v-model="dialog" width="300px">
-              <v-btn @click="dialog = false" icon="mdi-close" style="position: absolute; top: 0; right: 0"></v-btn>
+            <v-dialog activator="parent" v-model="dialog" width="600px">
               <ChatComponent/>
             </v-dialog>
           </v-btn>
